@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+VERSION=${1:-1.0.2}
+ARCH=${2:-linux-x64}
+RELEASES=${3:-releases}
+DISTURL=https://iojs.org/dist
+
+INSTALL=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/install
+exec ${INSTALL} iojs ${VERSION} ${ARCH} ${DISTURL} ${RELEASES}

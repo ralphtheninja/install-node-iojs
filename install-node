@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+VERSION=${1:-0.10.35}
+ARCH=${2:-linux-x64}
+RELEASES=${3:-releases}
+DISTURL=http://nodejs.org/dist
+
+INSTALL=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/install
+exec ${INSTALL} node ${VERSION} ${ARCH} ${DISTURL} ${RELEASES}
